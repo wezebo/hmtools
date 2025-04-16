@@ -1,0 +1,44 @@
+{
+  "rootDir": "src",
+  "testEnvironment": "jsdom",
+  "coverageProvider": "v8",
+  "testEnvironmentOptions": {
+    "resources": "usable"
+  },
+  "transform": {
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        "jsc": {
+          "transform": {
+            "react": {
+              "runtime": "automatic"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "collectCoverageFrom": [
+    "**/*.{js,jsx,ts,tsx}",
+    "!**/node_modules/**",
+    "!**/dist/**",
+    "!coverage/**",
+    "!**/*.d.ts"
+  ],
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
+  "transformIgnorePatterns": [
+    "/node_modules/(?!rehype)/"
+  ],
+  "moduleNameMapper": {
+    ".(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|css)$": "identity-obj-proxy"
+  }
+}
