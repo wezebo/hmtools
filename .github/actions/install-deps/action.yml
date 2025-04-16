@@ -1,0 +1,29 @@
+name: 'Installing dependencies'
+description: 'Installing frontend dependencies'
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/cache@v4
+      name: Cache node modules and yarn dir
+      id: cache
+      with:
+        path: |
+          .cache/bun 
+          **/node_modules
+        key: ${{ runner.os }}-modules-${{ hashFiles('bun.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-modules-
+
+    - name: Cache Nx
+      uses: actions/cache@v4
+      with:
+        path: .cache/nx-tasks-runners
+        key: cache-nx-${{ github.run_id }}
+        restore-keys: |
+          cache-nx-${{ github.run_id }}
+          cache-nx-
+
+    - name: Bootstrapping packages cached
+      shell: bash
+      run: bun install --frozen-lockfile
