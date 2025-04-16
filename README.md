@@ -1,6 +1,17 @@
-# React + Bun
+# HMTools
 
-A React application powered by the [Bun](https://bun.sh/) package manager and runtime.
+A web application built with **React** and **TypeScript**. This project includes unit testing with **Jest** and is deployed using **GitHub Pages**.
+
+##  Live Site
+
+Access the app here: [https://wezebo.github.io/hmtools/](https://wezebo.github.io/hmtools/)
+
+## Tech Stack
+
+- **React** – UI library
+- **TypeScript** – Static type checking
+- **Jest** – Unit testing
+- **GitHub Pages** – Deployment
 
 ## Scripts
 
