@@ -25,3 +25,6 @@ bun run typecheck
 ```sh
 bun run test
 ```
+
+
+![Cicd flow](./flow.jpg)
